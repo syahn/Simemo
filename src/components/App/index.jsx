@@ -10,12 +10,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: ''
+      text: this.props.loadedState
     };
-  }
-
-  componentDidMount() {
-    this.setState({ text: this.loadState() });
   }
 
   type = e => {
@@ -29,19 +25,6 @@ class App extends Component {
       localStorage.setItem('textState', serializedState);
     } catch (err) {
       console.log(err);
-    }
-  }
-
-  loadState = () => {
-    try {
-      const serializedState = localStorage.getItem('textState');
-      if (serializedState === null) {
-        return '';
-      }
-      return JSON.parse(serializedState);
-    } catch (err) {
-      console.log(err);
-      return undefined;
     }
   }
 
