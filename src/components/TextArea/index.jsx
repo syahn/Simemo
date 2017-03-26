@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 
 const TextBox = styled.textarea`
@@ -19,31 +19,22 @@ const TextBox = styled.textarea`
 `;
 
 const propTypes = {
-
-};
-const defaultProps = {
-
+  text: PropTypes.string,
+  type: PropTypes.func
 };
 
-class TextArea extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return(
-      <TextBox
-        placeholder="Start write..."
-        spellCheck="false"
-      >
-
-      </TextBox>
-    );
-  }
+function TextArea({ text, type }) {
+  return(
+    <TextBox
+      placeholder="Start write..."
+      spellCheck="false"
+      onChange={type}
+      value={text}
+    />
+  );
 }
 
 TextArea.propTypes = propTypes;
-TextArea.defaultProps = defaultProps;
 
 export default TextArea;
