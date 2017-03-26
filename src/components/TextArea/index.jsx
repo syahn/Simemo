@@ -12,7 +12,6 @@ const TextBox = styled.textarea`
   font-size: 16px;
   font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
 
-
   &:focus {
     outline: none;
   }
@@ -22,7 +21,6 @@ const propTypes = {
   text: PropTypes.string,
   type: PropTypes.func
 };
-
 
 function TextArea({ text, type }) {
   return(
