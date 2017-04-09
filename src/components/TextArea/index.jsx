@@ -2,11 +2,10 @@ import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 
 const TextBox = styled.textarea`
-  width: 100%;
+  min-width: 60%;
   height: 100%;
   border: none;
-  padding: 0 18em;
-  margin: 6em 0;
+  margin: 4em 20%;
   position: relative;
   line-height: 2em;
   font-size: 16px;
@@ -25,7 +24,7 @@ const propTypes = {
 function TextArea({ text, type }) {
   return(
     <TextBox
-      placeholder="Start write..."
+      placeholder="Start writing..."
       spellCheck="false"
       onChange={type}
       value={text}
